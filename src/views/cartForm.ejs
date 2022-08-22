@@ -1,0 +1,248 @@
+<%- include('./partials/head') %>
+
+<body>
+
+    <%- include('./partials/header') %>
+
+
+    <form id="formCart" class="formCart" action="/cart/purchase" method="POST" >
+      
+        <main class="cartMain">
+        
+            <section class="pasajeros">
+                <h4>¿Quiénes viajan?</h4>
+            
+                <div class="datosPasajeros">
+                   
+                        <article>
+                    
+                            <div class="validacion" id="nombre">
+                            <label  class="validacion_label"  for="first_name"> Nombre:</label>
+                                <input class="input" id="name"  class="name" type="text" name="first_name"  placeholder="Juan Pablo"  
+                                    class=" <%= locals.errors && errors.first_name ? 'this_is_invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.first_name : null %>" >
+                                    <% if(locals.errors && errors.first_name){ %> 
+                                        <div class="errors_form"> <%= errors.first_name.msg %> </div>
+                                    <% } %> 
+
+                                    <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                                    <p class="mensaje_error">Debe tener de 4 a 16 dígitos, no puede contener números, ni signos</p>
+                            </div>
+                        <div class="validacion" id="apellido">
+                            <label class="validacion_label"  for="last_name"> Apellido:</label>
+                                <input  type="text" name="last_name" id="last_name" placeholder="Perez" 
+                                    class=" <%= locals.errors && errors.last_name ? 'this_is_invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.last_name : null %>" >
+                                    <% if(locals.errors && errors.last_name){ %> 
+                                    <div class="errors_form"> <%= errors.last_name.msg %> </div>
+                                <% } %> 
+                                <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                                <p class="mensaje_error">Debe tener de 4 a 16 dígitos, no puede contener números, ni signos</p>
+                        </div>
+                        <div class="validacion" id="fecha_nac">
+                            <label class="validacion_label" for="birth_date">Fecha Nacimiento:</label>
+                                <input  type="date" name="birth_date" id="birth_date" 
+                                    class=" <%= locals.errors && errors.birth_date ? 'this_is_invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.birth_date : null %>" >
+                                    <% if(locals.errors && errors.birth_date){ %> 
+                                    <div class="errors_form"> <%= errors.birth_date.msg %> </div>
+                                <% } %> 
+
+                                <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                                <p class="mensaje_error">Debe seleccionar una fecha dd/mm/aaaa</p>
+                        </div>
+                        <div class="validacion" id="edad" >
+                            <label class="validacion_label" for="age">Edad:</label>
+                                <input  type="number" name="age" id="age" placeholder="32"
+                                    class=" <%= locals.errors && errors.age ? 'this_is_invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.age : null %>" >
+                                    <% if(locals.errors && errors.age){ %> 
+                                    <div class="errors_form"> <%= errors.age.msg %> </div>
+                                <% } %> 
+                                <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                                <p class="mensaje_error">Debe ingresar la edad</p>
+                        </div>
+                        <div class="validacion" id="documento">
+                            <label class="validacion_label" for="identity_document">Nro. Documento:</label>
+                                <input type="number" name="identity_document" id="identity_document" placeholder="23485265" 
+                                    class=" <%= locals.errors && errors.identity_document ? 'this_is_invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.identity_document : null %>" >
+                                    <% if(locals.errors && errors.identity_document){ %> 
+                                    <div class="errors_form"> <%= errors.identity_document.msg %> </div>
+                                <% } %> 
+                                <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                                <p class="mensaje_error">Debe ingresar un numero de documento</p>
+                        </div>
+                        <div class="validacion" id="domicilio">
+                            <label class="validacion_label" for="home">Domicilio:</label>
+                                <input type="text" name="home" id="home" placeholder="Florida 2365"
+                                    class=" <%= locals.errors && errors.home ? 'this_is_invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.home : null %>" >
+                                    <% if(locals.errors && errors.home){ %> 
+                                    <div class="errors_form"> <%= errors.home.msg %> </div>
+                                <% } %> 
+                                <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                                <p class="mensaje_error">Debe ingresar un domicilio, puede contener letras y numeros enteros</p>
+                        </div>
+                        <div class="validacion" id="codigo_postal">
+                            <label class="validacion_label" for="home">Código Postal:</label>
+                                <input type="number" name="postal_code" id="postal_code" placeholder="4000" 
+                                    class=" <%= locals.errors && errors.postal_code ? 'this_is_invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.postal_code : null %>">
+                                    <% if(locals.errors && errors.postal_code){ %> 
+                                    <div class="errors_form"> <%= errors.postal_code.msg %> </div>
+                                <% } %> 
+                                <i class="form_icono_estado fa-solid fa-circle-xmark"></i>
+                                <p class="mensaje_error">Debe ingresar el códico postal</p>
+                        </div>
+                        <div class="validacion" id="Provincia"> 
+                            <label class="validacion_label" for="province">Provincia:</label>
+                                <select class="province" name="province" id="province" 
+                                    class=" <%= locals.errors && errors.province ? 'this_is_invalid' : null %>"    
+                                    value="<%= locals.oldData ? oldData.province : null %>">
+                                    <% if(locals.errors && errors.province){ %> 
+                                    <div class="errors_form"> <%= errors.province.msg %> </div>
+                                    <% } %> >
+
+                                    <option value="1">Buenos Aires</option>
+                                    <option value="2">Catamarca</option>
+                                    <option value="3">Chaco</option>
+                                    <option value="4">Chubut</option>
+                                    <option value="5">Ciudad Autónoma de Buenos Aires</option>
+                                    <option value="6">Córdoba</option>
+                                    <option value="7">Corrientes</option>
+                                    <option value="8">Entre Ríos</option>
+                                    <option value="9">Formosa </option>
+                                    <option value="10">Jujuy </option>
+                                    <option value="11">La Pampa </option>
+                                    <option value="12">La Rioja </option>
+                                    <option value="13">Mendoza </option>
+                                    <option value="14">Misiones </option>
+                                    <option value="15">Neuquén </option>
+                                    <option value="16">Río Negro </option>
+                                    <option value="17">Salta </option>
+                                    <option value="18">San Juan </option>
+                                    <option value="19">San Luis </option>
+                                    <option value="20">Santa Cruz </option>
+                                    <option value="21">Santa Fe </option>
+                                    <option value="22">Santiago del Estero </option>
+                                    <option value="23">Tierra del Fuego, Antártida e Islas del Atlántico Sur </option>
+                                    <option value="24">Tucumán </option>
+                            </select>
+                                <!--  -->
+                        </div>
+                        <div class="validacion" id="correo">
+                            <label class="validacion_label" for="email_alternative">Email:</label>
+                                <input type="email" name="email_alternative" id="email" placeholder="soledad@gmail.com"
+                                class=" <%= locals.errors && errors.email_alternative ? 'this_is_invalid' : null %>" 
+                                value="<%= locals.oldData ? oldData.email_alternative : null %>">
+                                <% if(locals.errors && errors.email_alternative){ %> 
+                                    <div class="errors_form"> <%= errors.email_alternative.msg %> </div>
+                                <% } %> 
+                                <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                                <p class="mensaje_error">Debe ingresar un correo,  puede contener letras, números y guiones</p>
+
+                        </div>
+                        <div class="validacion" id="telefono">
+                            <label class="validacion_label" for="phone_number">Nro. Contacto:</label>
+                                <input type="tel" name="phone_number" id="phone_number" placeholder="381456987" 
+                                    class=" <%= locals.errors && errors.phone_number ? 'this_is_invalid' : null %>" 
+                                    value="<%= locals.oldData ? oldData.phone_number : null %>">
+                                    <% if(locals.errors && errors.phone_number){ %> 
+                                    <div class="errors_form"> <%= errors.phone_number.msg %> </div>
+                                <% } %> 
+                                <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                                <p class="mensaje_error">Debe ingresar un teléfono. Puede contener hasta 16 dígitos</p>
+                        </div>
+                    </article>
+                </div>
+           
+                
+            </section>
+            <div class="datosPasajeros">
+            <section class="pago">
+                <h4>¿Cómo querés pagar?</h4>
+                <div >
+                    <article class="medioPago">
+                        <div class="datosPago">
+                            <label for="payment_method">Tarjeta débito</label>
+                                <input class="radio" type="radio" name="payment_method" value="debito" 
+                                <%= locals.oldData &&  oldData.payment_method === "debito" ? "checked" : null %>>
+
+                        </div>
+                        <div class="datosPago">
+                            <label for="payment_method">Tarjeta crédito</label>     
+                                <input class="radio" type="radio" name="payment_method" value="tarjeta"
+                                <%= locals.oldData &&  oldData.payment_method === "tarjeta credito" ? "checked" : null %>>
+                                <% if(locals.errors && errors.payment_method){ %> 
+                                    <div class="errors_form"> <%= errors.payment_method.msg %> </div>
+                                <% } %> 
+                        </div>
+                        
+                    </article>
+                    <article class="pagoTarjeta"> 
+                        <div class="validacion" id="nro_tarjeta">
+                            <label class="validacion_label" for="card_number">Nro de tarjeta</label>
+                                <input type="number" name="card_number" id="card_number" placeholder="5684 6589 6244 1254" 
+                                    class=" <%= locals.errors && errors.card_number ? 'this_is_invalid' : null %>" 
+                                    value="<%= locals.oldData ? oldData.card_number : null %>">
+                                <% if(locals.errors && errors.card_number){ %> 
+                                    <div class="errors_form"> <%= errors.card_number.msg %> </div>
+                                <% } %> 
+                                <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                                <p class="mensaje_error">Debe ingresar el número de tarjeta de 16 dígitos</p>
+                        </div>
+                        <div class="validacion" id="titular">
+                            <label class="validacion_label" for="name_card_holder">Titular tarjeta</label>
+                                <input type="text" name="name_card_holder" id="name_card_holder" placeholder="como figura en su tarjeta" 
+                                class=" <%= locals.errors && errors.name_card_holder ? 'this_is_invalid' : null %>" 
+                                value="<%= locals.oldData ? oldData.name_card_holder : null %>">
+                                <% if(locals.errors && errors.name_card_holder){ %> 
+                                    <div class="errors_form"> <%= errors.name_card_holder.msg %> </div>
+                                <% } %> 
+                                <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                                <p class="mensaje_error">Debe ingresar el nombre tal como figura en su tarjeta</p>
+                        </div>
+                        <div class="validacion" id="vencimiento"> 
+                            <label class="validacion_label" for="expiration">Vencimiento</label>
+                                <input type="date" name="expiration"  id="expiration" placeholder="10/24" 
+                                    class=" <%= locals.errors && errors.expiration ? 'this_is_invalid' : null %>" 
+                                    value="<%= locals.oldData ? oldData.expiration : null %>">
+                                <% if(locals.errors && errors.expiration){ %> 
+                                    <div class="errors_form"> <%= errors.expiration.msg %> </div>
+                                <% } %> 
+                                <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                                <p class="mensaje_error">Debe seleccionar una fecha dd/mm/aaaa</p>
+                        </div>
+                        <div class="validacion" id="codigo_seguridad">
+                            <label class="validacion_label" for="security_code">Código seguridad</label>
+                                <input type="number" name="security_code" id="security_code" placeholder="220"  
+                                    class=" <%= locals.errors && errors.security_code ? 'this_is_invalid' : null %>" 
+                                 value="<%= locals.oldData ? oldData.security_code : null %>">
+                                 
+                                <% if(locals.errors && errors.security_code){ %> 
+                                    <div class="errors_form"> <%= errors.security_code.msg %> </div>
+                                <% } %> 
+                            <i class="form_icono_estado fa-solid fa-circle-check"></i>
+                            <p class="mensaje_error">Debe ingresar el código de seguridad, puede contener 3 o 4 dígitos</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+                <div class="div_boton_form">
+               
+                        <button class= "botonForm" type="submit" value="pago" >Pagar</button>
+                    </a>
+                        <button class="botonForm" type="reset" >Borrar</button>
+                </div>
+                
+            </section>
+        </main>
+      
+    </form>
+   
+        <%- include('./partials/footer') %>
+    <script src="https://kit.fontawesome.com/a2385b59a3.js" crossorigin="anonymous"></script>
+      
+</body>
+</html>

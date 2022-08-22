@@ -1,0 +1,29 @@
+
+    <%- include('./partials/head') %>
+
+    <body>
+        <%- include('./partials/header') %>
+        <%- include('./partials/main', {selector_paquetes}) %>
+        
+        <section class="paquetes">
+            <h3>Paquetes:</h3>
+            <div class="productos">
+                <% for (let paquete of index_paquetes) {%>
+                        <%- include('./partials/paquete', {paquete}) %>
+                <% } %>  
+            </div> 
+        </section>
+        <section class="ofertas">
+            <h3>Ofertas:</h3>
+            <div class="prod_ofertas"> 
+                <% for (let paquete of index_ofertas) {%>
+                        <%- include('./partials/paquete', {paquete}) %>
+                <% } %>
+            </div>
+        </section>
+
+        <%- include('./partials/footer') %>
+           
+    </body>
+
+</html>

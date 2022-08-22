@@ -1,0 +1,1077 @@
+*
+{
+    box-sizing: border-box
+}
+
+header
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+footer
+{
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+}
+
+body
+{
+    font-size: medium;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.cart_main
+{
+   background-color: #f0f9e8 ;
+}
+
+.headerCart
+{
+     background-color: beige;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 0;
+    position:static;
+}
+
+.headerCart img
+{
+    display:flex;
+    margin: 10px 5px 5px 10px;
+    width: 180px;
+}
+.navCart
+{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    /* border: 2px solid salmon;*/
+    margin: 5px;
+}
+.navCart img
+{
+    width: 15px;
+    display: flex;
+}
+.navCenter
+{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-right: 20px;
+    display: none;
+    /*border: solid blue  2px;*/
+}
+.navCenter li
+{
+    padding: 20px;
+}
+
+.navRigth
+{
+    display: flex;
+    align-items: flex-end;
+    list-style: none;
+    align-self:flex-end;
+}
+.hamburguer{
+    display: flex;
+    width: 30px;
+    margin: 0;
+    align-self: flex-start;
+}
+.section_cart
+{
+    display: block;
+    padding: 30px 30px 0 30px;
+}
+
+.title_cart
+{
+    width: 100%;
+    height: 10%;
+    background-color:rgb(132 7 7);
+    color: white;
+    opacity: 0.9;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* cartForm */
+.max_cart
+{  
+ 
+     max-width: 800px;
+   
+}
+.encabezado_cart
+{
+    display: flex;
+    margin-bottom: 0;
+    font-size: 16px;
+    align-items: center;
+    font-weight: 500;
+    padding: 10px;
+    font-family: "Lato",sans-serif;
+    background-color: #ebebeb;
+}
+#hr 
+{
+    margin: 0px;
+}
+
+.subtitulo_cart
+{
+    text-align: center;
+    background-color:beige;
+    font-size: 14px;
+    color: rgb(47, 46, 46);
+    /* border: solid 1px rgba(128, 128, 128, 0.557); */
+    font-family: "Lato",sans-serif;
+
+  
+}
+h5.subtitulo_cart
+{
+    margin: 0px;
+}
+.grupo_superior_cart
+{
+    display: flex;
+    padding-top: 5px;
+    /* border: solid 3px blue; */
+    font-family: "Lato",sans-serif; 
+}
+.superior_A
+
+{   
+    max-width: max-content;
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    /* border:  solid red; */
+    justify-content: center;
+    width: 50%;
+  
+}
+
+.superior_B
+{
+    flex-direction: column;
+    display: flex;
+    /* border: solid green; */
+    flex-grow: 3;
+    padding-left: 3%;
+    justify-content: center;
+    align-items: flex-start;
+   
+
+
+    
+}
+.superior_C
+{   
+    display: flex;
+    position: relative;
+    font-size: 12px;
+    /* border: solid pink; */
+    flex-grow: 3;
+    justify-content: end;
+    align-items: flex-end;
+  
+}
+
+.discount_cart
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: hwb(0 20% 22% / 0.843);
+    padding-top: 5px;
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    right:15%;
+    top: 8%;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  
+}
+
+.imagen_item_cart 
+{
+  /* border: solid 3px red; */
+    width: 90%;
+    height: 90%;
+    padding: 5px;
+}
+.imagen_item_cart:hover
+{
+    filter: brightness(120%);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.409);
+
+}
+
+
+.title_item_cart
+{
+    flex-grow: 2;
+    padding: 0px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: start;
+
+}
+
+.price_item_cart
+{
+    font-size: 12px;
+    text-decoration:line-through;
+    font-style: italic;
+    text-align: start;
+   
+    
+}
+.price_person_item
+{
+    font-size: 10px;
+    text-align: start
+}
+.price_descount_item
+{
+    font-size: 12px;
+    text-align: start;
+  
+}
+p.title_item_cart, .price_item_cart,  .price_descount_item, .price_person_item
+{
+    margin: 0px;
+}
+
+.delete_item
+{
+    position: absolute;
+    right: 10%;
+    top: 0px;
+  
+}
+.total_item_cart
+{
+ font-weight: bold;
+padding-bottom: 10px;
+}
+p.total_item_cart
+{
+    margin: 0px;
+}
+.grupo_inferior_cart
+{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    max-width: 800px;
+}
+.inferior_A
+{
+    display: flex;
+    flex-direction: row-reverse; 
+ 
+}
+.cantidad_item
+{
+    font-family: "Lato",sans-serif; 
+    font-size: 12px;
+
+}
+.contador
+{
+    width: 35px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: beige;
+    margin-left: 5px;
+    
+}
+
+/* ------------------------------- */
+
+.hr
+{
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+    border-color: rgba(24, 23, 23, 0.673) ;
+    opacity: 0.1;
+  
+}
+
+.pagoTotal
+{
+   display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color:  #ebebeb;
+   /*border: solid violet 5px;*/
+    align-items: flex-end;
+    margin: 0;
+}
+
+.textTotal
+{
+    display: flex;
+    padding: 0;
+    margin: 1px;
+    font-weight:400;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.montoTotal
+{
+    margin: 0px;
+    font-size: 18px;
+}
+.keep_buy
+{
+    padding:10px 20px 0px 0px
+}
+.keep_buy a:hover
+{
+   color:  rgb(132 7 7);
+}
+.keep_buy a
+{
+  
+     align-self: center;
+    text-decoration: none;
+    color:rgb(132 7 7) ;
+    font-weight: 500;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.remove
+{
+    display:inline-flex;
+    font-size: 12px;
+    color:rgb(132 7 7);
+    text-decoration: none;
+    align-self: center;
+}
+
+.botonPago
+{
+    background-color:rgba(132, 7, 7, 0.845);
+    opacity: 0.9;
+    border: none;
+     font-size: 14px;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    margin: 3px 0px 0px ;
+    justify-content: center;
+}
+
+/****** cartForm**********/
+.errors_form
+{
+    color: red;
+    font-size: 12px;
+}
+.pasajeros
+{
+    display: flex;
+    justify-content:flex-start;
+    justify-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #ebebeb;
+    padding: 15px 20px;
+}
+h4
+{
+    display: flex;
+    justify-content:left;
+    align-items: flex-start;
+    text-align:start;
+    margin: 5px;
+}
+.cantidadPasajeros
+{
+    display: flex;
+    max-width: max-content;
+    flex-direction: row;
+    margin: 5px;
+}
+.cantidadPasajeros label
+{
+    font-size: 12px;
+    margin: 5px;
+}
+.cantidadPasajeros select
+{
+    font-size: 10px;
+    width: 30px;
+    height: 20px;
+}
+
+.datosPasajeros
+{
+    font-size: 8;
+    display: flex;
+    flex-direction: column;
+    max-width:100%;
+}
+.datosPasajeros div
+{
+    display: flex;
+    margin: 5px;
+    flex-direction: column;
+    font-size: 12px;
+    margin: 5px;
+    width: 100%;
+}
+.pasajeros input
+{
+    display: flex;
+    margin-right: 20px;
+    padding: 10px;
+    font-size: 16px;
+    font-style: italic;
+    width: 90%;
+    
+}
+
+.fechaNacimiento
+{
+    margin: 0px;
+}
+
+
+
+
+.province
+{
+    background-color:white;
+    display: flex;
+    height: 40px;
+    font-size: 16px;
+    font-style: italic;
+    color: grey;
+    width: 90%;
+}
+.pasajeros label
+{
+    font-size: 16px;
+}
+.pago
+{
+    font-size: 8;
+    padding:15px 20px;
+    display: flex;
+    flex-direction: column;
+    max-width:100%;
+    background-color: #ebebeb;
+}
+.medioPago
+{
+    font-size: 8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.medioPago div
+{
+    display: flex;
+    max-width: max-content;
+    flex-direction: row;
+    margin: 5px;
+}
+.medioPago label
+{
+    font-size: 16px;
+}
+
+.pagoTarjeta
+{
+    font-size: 16px;
+
+}
+
+.pagoTarjeta
+{
+    display: flex;
+    margin: 5px;
+    flex-direction: column;
+    font-size: 16px;
+    margin: 5px;
+}
+
+
+.medioPago input
+{
+width: 20px;
+margin-left: 5px;
+}
+.pago input
+{
+
+    display: flex;
+    margin-right: 20px;
+    font-size: 16px;
+    font-style: italic;
+
+    padding: 10px;
+}
+.empty_cart
+{
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.find_package
+{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.find_package a
+{
+    text-decoration: none;
+    color: #800000;
+    padding: 10px;
+
+
+}
+.section_cart_empty
+{
+    display: flex;
+    height: 300px;
+    background-color: #ebebeb;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+}
+.bottonForm
+{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    justify-content: center;
+    margin: 5px;
+}
+.bottonForm a
+{
+    text-decoration: none;
+}
+.div_boton_form
+{
+    display: flex;
+    justify-content: center;
+}
+.botonForm
+{
+    background-color: #39b54a;
+    border: none;
+    font-size: 1em;
+    color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 10px;
+    transition: background-color 450ms;
+    display: inline-block;
+    justify-content: flex-end;
+    margin: 3px;
+    text-decoration: none;
+}
+.botonForm:hover
+{
+    background-color:  rgb(45 149 19)
+}
+
+ /* Footer  */
+
+
+ .index_footer
+ {
+    margin: 10px 0;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+ }
+.header_footer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.index_footer .header_footer .hamburguer-button
+{
+
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    align-self: flex-start;
+}
+.menu_footer
+{
+    display: none;
+}
+.index_footer .logo
+{
+
+    max-width: 90px;
+    max-height: 36px;
+}
+.body_footer
+{
+
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.body_footer form
+{
+    padding: 2px;
+    font-size: small;
+    font-style: italic;
+}
+.body_footer button
+{
+    padding: 2px;
+    flex-grow: 0.25;
+    align-self: flex-start;
+}
+.iconos_sociales
+{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.iconos_sociales img
+{
+    width: 20px;
+    height: 20px;
+}
+.iconos_sociales img:hover
+{
+    width: 25px;
+    height: 25px;
+}
+
+/* .... CART FINAL..*/
+
+.cartMain
+{
+    background-color: #ebebeb;
+    margin: 0px;
+}
+.cartMain h1
+{
+    margin: 0;
+}
+h1
+{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0px;
+    color: rgb(7, 7, 7);
+    text-decoration:double;
+}
+.textFinalCart
+{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.logoFinal
+{
+    display: flex;
+    justify-content: center;
+}
+.logoFinal img
+{
+
+    display: flex;
+    width: 100px;
+    justify-items: center;
+    align-items: center;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.logoFinal img
+{
+    animation-duration: 4s;
+    animation-name: logo;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+}
+/* validacion Front */
+
+.validacion
+{
+    position: relative;
+}
+/* iconos ocultos */
+.validacion .form_icono_estado
+{
+    position: absolute;
+    top:40px;
+    right: 180px;
+    opacity: 0;
+    right: 80px;
+    width: max-content;
+
+}
+
+/* mostrar icono estado correcto */
+
+.validacion_correcta .form_icono_estado
+{
+    color: #39b54a;
+    opacity: 1;
+
+}
+/* mensaje inactivo */
+.validacion p.mensaje_error 
+{
+    margin: 0px;
+    text-align: left;
+    display: none;
+    color:#bb2929;
+    font-size: 10px;
+
+}
+/* muestra mje con error */
+.validacion p.mensaje_error-activo
+{
+   display: block;
+}
+.validacion_incorrecta .form_icono_estado
+{   
+    color:#bb2929;
+    opacity: 1;
+
+}
+.validacion_label
+{
+    font-weight: 500px;
+}
+.validacion_incorrecta .validacion_label
+{
+    color:#bb2929;
+    
+}
+
+/* muestra icono incorrecto */
+.validacion_incorrecta .form_icono_estado
+{
+    color:#bb2929;
+    opacity: 1;
+}
+.validacion_incorrecta input 
+{
+    color:#bb2929;
+    border: solid 3px #bb2929;
+
+}
+.validacion_correcta input 
+{
+    color: #39b54a;
+    border: solid 3px #39b54a;
+   
+}
+@keyframes logo
+{
+    0% {width: 75px;}  50% {width: 100px;}  100% {width: 200px;}
+    0% {width: 200px;}  50% {width: 10px;}  100% {width: 50px;} 100% {width: 200px;}
+}
+
+
+/* .... MEDIA QUERIS..*/
+
+@media (min-width: 768px) {
+    /* Header */
+
+.hamburguer
+{
+    display: none;
+}
+.headerCart
+{
+    justify-content: space-between;
+}
+.navCart
+{
+    display: flex;
+    justify-content: center;
+    width: 768px;
+}
+.navCenter {
+
+    display: flex;
+    flex-direction: row;
+}
+.navCenter li:hover
+{
+    background-color:rgb(195, 236, 158);
+}
+.div_boton_form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 90%;
+}
+
+        /* Footer */
+.header_footer .left_header_menu
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.header_footer .left_header_menu li
+{
+    margin: 5px 8px;
+    list-style-type: none;
+}
+.header_footer .left_header_menu li:hover
+{
+    background-color:rgb(195, 236, 158);
+}
+.index_footer .header_footer .hamburguer-ton
+{
+    display: none;
+}
+.menu_footer
+{
+    display: block;
+}
+.index_footer .logo
+{
+    max-width: 126px;
+    max-height: 50.4px;
+}
+
+/*-----CartForm----*/
+
+.this_is_invalid
+{
+    background-color: rgba(235, 182, 148, 0.477);
+    border-color: #800000;
+}
+.cartMain
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+h4
+{
+    padding: 5px;
+    margin: 5px;
+}
+.botonForm
+{
+    display: flex;
+    font-size: 18px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+.articule_cart
+{
+    width: 80vh;
+}
+
+
+ /* CART FINAL */
+.cartMain
+{
+    display: block;
+    flex-direction: column;
+}
+.textFinalCart
+{
+    margin: 10px;
+    padding: 20px;
+}
+.keep_buy a:hover
+{
+    color: #800000;
+}
+/* validacion */
+.validacion .form_icono_estado
+{
+  right: 130px;
+}
+
+}
+
+@media (min-width: 1200px) {
+.navCart
+{
+    max-width: 1200px;
+}
+.remove
+{
+    font-size: 20px;
+}
+.cartMain
+{
+    flex-direction: column;
+    justify-content:center;
+    margin: 0;
+}
+.montoTotal
+{
+    margin-top: 5px;
+    font-size: 20px;
+}
+.action_cart
+{
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+.textTotal
+{
+    margin: 0px;
+    margin-top: 5px;
+    margin-right:5px;
+}
+.keep_buy
+{
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.pasajeros
+{
+    min-width: none;
+    max-width: none;
+    display: flex;
+    padding: 0;
+    margin-top: 10px;
+    border:none;
+    margin: 0px;
+    font-size: 15px;
+}
+.cantidadPasajeros label
+{
+    font-size: 18px;
+}
+.datosPasajeros div
+{
+    font-size: 16px;
+}
+.datosPasajeros input
+{
+    display: flex;
+    margin-right: 10px;
+    font-size: 18px;
+    font-style: italic;
+    width: 80%;
+}
+.datosPasajeros
+{
+    margin-left: 40px;
+}
+.pago
+{
+    min-width: none;
+    max-width: none;
+    display: flex;
+    padding: 0;
+    margin-top: 10px;
+    border:none;
+    margin: 0px;
+    font-size: 15px;
+}
+.medioPago
+{
+    justify-content: space-around;
+    width: 50%;
+    margin-left: -40px
+}
+.medioPago input
+{
+width: 20px;
+margin-left: 5px;
+}
+.province
+{   background-color:white;
+    display: flex;
+    margin-right: 10px;
+    font-size: 18px;
+    font-style: italic;
+    color: grey;
+    width: 80%;
+    height: 40px;
+}
+
+.div_boton_form
+{
+    position: relative;;
+    display: flex;
+    left: 200px;
+    font-size: 18px;
+    font-style: italic;
+    width: 50%;
+    opacity: 0.9;
+}
+.textFinalCart
+{
+    font-size: 24px;
+}
+.cartMain
+{
+    min-height: 800px;
+}
+.articule_cart
+{
+    width: 80vh;
+}
+.section_cart
+{
+    padding: 40px;
+}
+
+/* validacion */
+.validacion .form_icono_estado
+{
+  right: 250px;
+}
+.keep_buy a:hover
+{
+ text-decoration: none;
+ color: #800000;
+}
+
+
+
+}
+
+

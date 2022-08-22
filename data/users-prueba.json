@@ -1,0 +1,27 @@
+[
+ {
+  "user_id": 1,
+  "user": "Ignacio",
+  "email": "ignacio@gmail.com",
+  "password": "$2a$10$lGotBeBK0nNtldquPdZdRuQKG7cyD1l6ICKz034kks3htbUyXFcAO",
+  "password_valid": "$2a$10$8JHXeL2Dky0EDe/gm1/9t.7LdTZN62dfyAx6.0XpBINrJDRQlAyO6",
+  "avatar": "1653846615007_img.png"
+ },
+ {
+  "user_id": 2,
+  "user": "silvana",
+  "email": "sil@gmail.com",
+  "password": "$2a$10$zw4Ttcbe/65Fi1WLwrPDCei09unTPmzEPVbrW/90T2AhJ60q2oim.",
+  "password_valid": "$2a$10$hQnBEuZ3mu3eH8hlUdirOuGULakXrbPAcHP2IlTHS7upWmQrubsJi",
+  "avatar": "1654647688401_img.png"
+ },
+ {
+  "user_id": 3,
+  "user": "Felipe",
+  "email": "feli@gmail.com",
+  "password": "$2a$10$JmFRNWbhOHwa4.NOAl83Fu3eBqCRw6ORdA9/1.WexN/JrgzTdnk/2",
+  "password_valid": "$2a$10$OEaPeUgkS0jZ8EXZ3oNgc.w1RMgLfQWnU3P4nJx/tLpEPsEWixAnq",
+  "avatar": "1654648053784_img.png"
+ }
+ 
+]

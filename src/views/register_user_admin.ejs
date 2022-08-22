@@ -1,0 +1,65 @@
+
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header_admin') %>
+
+    <!-- Formulario -->
+    
+    <form action="/admin/users" method="POST" class="producto_v create_form" enctype="multipart/form-data" id="form_crear">
+        <h3>Crear Usuario</h3> 
+        <div class="errores">
+            <ul class="errores_formulario_v"></ul>
+        </div>    
+        <div class="control_formulario">
+            <!-- Usuario -->
+            <label>Usuario: </label>
+            <input type="text" name="user" class="name_v control <%= locals.errors && errors.user ? 'is_invalid' : null %>"
+                value="<%= locals.old_data ? old_data.user : null %>"
+                placeholder="Nombre de Usuario" maxlength="40" size="32">
+                <% if (locals.errors && errors.user) { %>
+                    <div class="text_error">
+                        <%= errors.user.msg %> 
+                    </div> 
+                <% } %>
+        </div>
+        <div class="control_formulario">
+            <!-- Email -->
+            <label>Email: </label>
+            <input type="email" name="email" 
+                class="name_v control" placeholder="Email"  maxlength="40" size="32"
+                value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text_error">
+                        <%= errors.email.msg %>
+                    </div>
+                <% } %>
+        </div>
+        <div class="control_formulario">
+            <!-- Contraseña -->
+            <label>Contraseña: </label>
+            <input type="password" name="password" class="name_v control" placeholder="Contraseña"  maxlength="40" size="32">
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text_error">
+                        <%= errors.password.msg %>
+                    </div>
+                <% } %>
+        </div>
+        <div class="control_formulario">
+            <!-- Confirmar contraseña -->
+            <label>Confirmar contraseña: </label>
+            <input type="password" name="password_valid" class="name_v control" placeholder="Confirmar contraseña"  maxlength="40" size="32">
+                <% if (locals.errors && errors.password_valid) { %>
+                    <div class="text_error">
+                        <%= errors.password_valid.msg %>
+                    </div>
+                <% } %>
+        
+        </div>
+                                                                             
+        <button type="submit" class="boton_formulario">Aceptar</button>
+        <button type="reset" class="boton_formulario">Borrar</button>
+        <button type="reset" class="boton_formulario"><a href="/admin/users">Cancelar</a></button>
+    </form>
+    <%- include('./partials/footer_admin') %>
+</body>
+</html>

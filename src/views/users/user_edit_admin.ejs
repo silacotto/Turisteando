@@ -1,0 +1,100 @@
+
+<%- include('../partials/head') %>
+
+    <%- include('../partials/header_admin') %>
+<body class="body_users">
+
+   
+        <h3 class="title_modificar">Formulario para modificar un Usuario</h3>
+
+        <nav class="nav_acciones_admin">
+            <a class="crear_text_admin" href="/admin"><img class= "crear_admin" src="/images/atras.svg" alt="Crear" >
+              <p>Home</p></a>
+          </nav>
+          
+         <% if(user) { %>
+    <form action="/admin/user/edit?_method=PUT" method="POST" class="create_form" id= 'form_edit' enctype="multipart/form-data">
+        
+        <div class="id_edit">
+            <label>Editar usuario <%= user.user_id%></label>
+        <input  type="number" name="user_id" value="<%= user.user_id%>" readonly  hidden >
+      
+        </div>
+        
+        <div class="user_edit">
+            <label>Nombre de ususario:</label>
+            <input type="text" name="user" class="control" value="<%= user.user%>"readonly  size="32">
+        </div>
+        <div class="user_edit">
+            <label>User email:  </label>
+            <input type="email" name="email" class="control" value="<%= user.email%>" readonly   size="10">
+        </div>
+        <div class="user_edit">
+            <label>password:  </label>
+            <input type="password" name="password"  value="<%= user.password%>" class="control" readonly  size="10">
+        </div>
+        <div class="user_edit">
+            <label>password_valid:  </label>
+            <input type="password" name="password_valid"  value="<%= user.password_valid%>" class="control" readonly  size="10">
+        </div>
+        <div class="user_edit">
+            <label><%= user.avatar%></label>
+            <input type="file" name="avatar" class="control" value="<%= user.avatar%>" readonly size="32">
+        </div>
+            <% } %>
+
+        <% if(user2) { %>
+        <div class="user_edit">
+            <label>Nombre: </label>
+            <input type="text" name="first_name" value="<%= user2.first_name%>" class="control"  size="32">
+        </div>
+        <div class="user_edit">
+            <label>Apellido: </label>
+            <input type="text" name="last_name" class="control"  value="<%= user2.last_name%>" size="32">
+        </div>
+        <div class="user_edit">
+            <label>Fecha de Nacimiento: </label>
+            <input type="date" name="birth_date" value="<%= user2.birth_date%>" class="control" size="32">
+        </div>
+        <div class="user_edit">
+            <label>Edad: </label>
+            <input type="number" name="age" value="<%= user2.age%>" class="control"  size="32">
+        </div>
+        <div class="user_edit">
+            <label>N° Documento: </label>
+            <input type="number" name="identity_document" value="<%= user2.identity_document%>" class="control"  size="32">
+        </div>
+        <div class="user_edit">
+            <label>Domicilio: </label>
+            <input type="text" name="home" value="<%= user2.home%>" class="control"  size="32">
+        </div>
+        <div class="user_edit">
+            <label>Código Postal: </label>
+            <input type="number" name="postal_code" value="<%= user2.postal_code%>" class="control"  size="32">
+        </div>
+        <div class="user_edit">
+            <label>Provincia: </label>
+            <input type="text" name="province" value="<%= user2.province.id_province%>" class="control"  size="32">
+        </div>
+        <div class="user_edit">
+            <label>Mail alternativo:  </label>
+            <input type="email" name="email_alternative" class="control" value="<%= user2.email_alternative%>"  size="10">
+        </div>
+        <div class="user_edit">
+            <label>Numero Contacto:</label>
+            <input type="tel" name="phone_number" value=" <%= user2.phone_number%> " class="control"   size="10">
+        </div>
+        
+        
+        <% } %>
+       
+            <div class="button_users">                              
+                <button type= "submit" class="button_edit_users">Actualizar</button>
+                <button type="reset" class="button_edit_users"><a href="/admin/users">Cancelar</a></button>
+            </div>
+         
+    </form>
+
+    
+</body>
+</html>

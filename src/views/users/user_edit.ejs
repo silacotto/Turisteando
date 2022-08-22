@@ -1,0 +1,56 @@
+
+
+<%- include('../partials/head') %>
+<body class="body_users">
+    
+
+   
+        <h3>Formulario para modificar un Usuario</h3>
+        <nav class="nav_acciones_admin">
+             
+            <a class="crear_text_admin" href="/admin"><img class= "crear_admin" src="/images/atras.svg" alt="Crear" >
+              <p>Home</p></a>
+          </nav>
+       
+    <form action="/users/profile/edit/<%= user.user_id%>?_method=PUT" method="POST" class="create_form" id= 'form_edit' enctype="multipart/form-data">
+        
+        <div class="id_edit">
+            <label>Editar usuario <%= user.user_id%></label>
+        <input  type="number" name="user_id" value="<%= user.user_id%>" readonly  hidden >
+      
+        </div>
+        
+        <div class="user_edit">
+            <label>Nombre de ususario:</label>
+            <input type="text" name="user" class="control" value="<%= user.user%>"  size="32">
+        </div>
+        <div class="user_edit">
+            <label>User email:  </label>
+            <input type="email" name="email" class="control" value="<%= user.email%>"    size="10">
+        </div>
+        <div class="user_edit">
+            <label>password:  </label>
+            <input type="password" name="password"  value="<%= user.password%>" class="control" readonly  size="10">
+        </div>
+        <div class="user_edit">
+            <label>password_valid:  </label>
+            <input type="password" name="password_valid"  value="<%= user.password_valid%>" class="control" readonly  size="10">
+        </div>
+        <div class="user_edit">
+            <label><%= user.avatar%></label>
+            <input type="file" name="avatar" class="control" value="<%= user.avatar%>" readonly size="32">
+        </div>
+     
+
+       
+       
+            <div class="button_users">                              
+                <button type= "submit" class="button_edit_users">Actualizar</button>
+                <button type="reset" class="button_edit_users"><a href="/users/profile">Cancelar</a></button>
+            </div>
+         
+    </form>
+
+    
+</body>
+</html>

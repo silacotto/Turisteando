@@ -1,0 +1,787 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.text_error {
+    font-size: medium;
+    color: red;
+}
+.is_invalid {
+    background-color: rgb(244, 142, 159);
+    border-color: #800000;
+    border-width: 3px;
+}
+
+/* Header */
+.index_header {
+    /*border: dotted 2px red;*/
+    background-color: beige;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    position:relative;
+}
+
+/* loto de Turisteando */
+.logo{
+    /*border: dotted 2px red;*/
+    max-width: 180px;
+    max-height: 72px;
+}
+
+/* Menu de Home - Paquetes - Ofertas - Contacto */
+.nav_menu1 {
+    display: none;
+}
+.ul_1 li {
+    margin: 5px 8px;
+    list-style-type: none;
+}
+/*==============================================================*/
+/*==============================================================*/
+/*==============================================================*/
+
+/* Menu hamburguesa para desplegar en Smartphone las opciones de Home - Paquetes - Ofertas - Contacto */
+
+
+.main-nav_hamburguer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 30vh;
+    width: 35%;
+    margin-left: -100%;
+    transition: all 0.2s linear;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}
+  
+.main-nav_hamburguer.show{
+    margin-left: 0;
+}
+  
+.nav-links_hamburguer {
+
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+  
+.link-item_hamburguer {
+    margin-top: 2rem;
+    margin-left: 1rem;
+    color: #444444;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    font-size: 12px;
+    
+}
+
+.link-item_hamburguer::after {
+    position: absolute;
+    content: "";
+    background-color: black;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+}
+  
+.link-item_hamburguer:hover::after {
+    width: 100%;
+}
+
+.button-menu_hamburgue {
+    margin-left: 2px;
+    margin-top: 2px;
+    z-index: 50;
+    width: 15px;
+    height: 15px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.button-menu_hamburgue_close {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 12px;
+    width: 12px;
+    margin-left: -100%;
+    transition: all 0.2s linear;
+    z-index: 100;
+}
+.button-menu_hamburgue_close.show {
+    margin-left: 2px;
+    margin-top: 0;
+}
+
+/*==============================================================*/
+/*==============================================================*/
+/*==============================================================*/
+
+
+
+/* Menu con los Iconos de Loguin - Registro - Carrito de compra */
+.nav_menu2 {
+    /*border: dotted 2px rgb(115, 0, 255);*/ 
+    margin: 0;
+    align-self: flex-end;    
+}
+.ul_2 {
+    /* border: dotted 2px rgb(255, 0, 0); */
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row; 
+}
+.ul_2 li {
+    /* border: dotted 2px rgb(0, 255, 47); */
+    margin: 5px 8px;
+    list-style-type: none;
+}
+.ul_2 li img {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* Menu de usuario logeado - Iconos de perfil y carrito */
+.nav_menu_log {
+    margin: 0 10px;
+}
+.nav_profile {
+    font-weight: bold;
+}
+
+.nav_profile img {
+    width: 40px;
+    border-radius: 100%;
+    margin-right: 5px;
+}
+
+.nav.logout {
+    margin: 0 5px;
+    padding: 10px;
+}
+
+.nav_cart img {
+    margin: 0 10px;
+    width: 18px;
+}
+
+
+
+/* Cuerpo principal de los Productos */
+.main {
+    /*border: dotted 2px red;*/
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.form_main {
+    /*border: dotted 2px red;*/
+    align-self: flex-start;
+
+}
+.boton_main {
+    /*border: dotted 2px green;*/
+    align-self: flex-start;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+/* Seccion de Paquetes y Ofertas */
+
+/* Paquetes */
+.paquetes h3 {
+    /*border: dotted 2px red;*/
+    margin: 10px;
+    padding: 2px;
+    
+}
+
+.product_image .llenar {
+    /* border: dotted 2px red;*/
+    width: 310;
+    height: 200;
+    object-fit: fill;
+    
+} 
+
+.productos {
+    /*border: dotted 2px red;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.productos article {
+    margin: 3px;
+    padding: 3px;
+    border: solid 8px beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(240,249,232);
+    width: 338px;
+    height: 327.6px;
+}
+.product_image:hover {
+    box-shadow: 10px 5px 5px black;
+}
+.productos article figure {
+    align-self: center;
+    padding: 0 5px 0 5px;
+}
+.productos article p {
+    align-self: flex-start;
+    margin: 0 0 4px 0;
+    padding: 0 6px 0 6px;
+}
+
+/* Ofertas */
+.ofertas h3 {
+    margin: 10px;
+    padding: 3px;    
+}
+.prod_ofertas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.prod_ofertas article {
+    margin: 3px;
+    padding: 3px;
+    border: solid 8px beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(240,249,232);
+    width: 338px;
+    height: 327.6px;
+}
+.prod_ofertas article figure {
+    align-self: center;
+    padding: 0 5px 0 5px;
+}
+.prod_ofertas article p {
+    align-self: flex-start;
+    margin: 0 0 4px 0;
+    padding: 0 6px 0 6px;
+}
+
+/* Footer */
+
+.index_footer {
+    /*border: dotted 2px red;*/
+    margin: 10px 0;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+}
+.header_footer {
+    /*border: dotted 2px green;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.index_footer .header_footer .hamburguer-button {
+    /*border: dotted 2px black;*/
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    align-self: flex-start;  
+}
+.menu_footer {
+    display: none;
+}
+.index_footer .logo {
+    /*border: dotted 2px rgb(119, 0, 255);*/
+   max-width: 90px;
+    max-height: 36px;
+
+}
+.body_footer {
+    /*border: dotted 2px blue;*/
+   margin-top: 4px;
+    margin-bottom: 4px;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.body_footer form {
+    padding: 2px;
+    font-size: small;
+    font-style: italic;
+}
+.body_footer button {
+    padding: 2px;
+    flex-grow: 0.25;
+    align-self: flex-start;
+}
+.iconos_sociales {
+    /*border: dotted 2px rgb(255, 0, 179);*/
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.iconos_sociales img {
+    width: 20px;
+    height: 20px;
+}
+.iconos_sociales img:hover {
+    width: 25px;
+    height: 25px;
+}
+
+/* Style for the Contacts page */
+
+.main_contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.body_data {
+    /*border: dotted 2px black;*/
+    margin: 15px;
+}
+.imag_contact {
+    /*border: dotted 2px black;*/
+    margin: 15px;
+    
+}
+.imagen1 {
+    display: block;
+}
+.imagen2 {
+    display: none;
+}
+.imagen3 {
+    display: none;
+}
+.imagen4 {
+    display: none;
+}
+.imagen5 {
+    display: none;
+}
+.imagen6 {
+    display: none;
+}
+.index_footer_contact {
+    /*border: dotted 2px red;*/
+    margin: 10px 0;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+}
+
+/*=====================================================================================================*/
+/* paquete_admin.ejs y productos_admin.ejs                                                             */
+
+
+.table
+{
+ font-size: 10px;
+ display: flex;
+ flex-direction: row;
+
+
+
+}
+ .table td
+{
+    display: flex;
+    flex-direction: column;
+
+    table-layout: auto;
+    width: 100%;
+    padding: 0px;
+    text-align: justify;
+    justify-content: flex-start;
+    padding-left: 10px;
+
+  
+}
+ .img_table {
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    overflow:scroll;
+    opacity: 0.8;
+    -webkit-box-shadow: -3px 0px 23px 7px rgba(0,0,0,0.28);
+    -moz-box-shadow: -3px 0px 23px 7px rgba(0,0,0,0.28);
+    box-shadow: -3px 0px 23px 7px rgba(0,0,0,0.28);
+
+} 
+.img_table:hover  {   filter:brightness(1);opacity: 1;}
+
+.img_table {overflow:hidden;}
+
+.productos_admin {
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.productos_admin article {
+/* border: solid green 2px; */
+display: flex;
+flex-direction: row;
+/* border: double 3px grey; */
+padding: 10px;
+max-width: 1000px;
+margin-right: 10px;
+background-color: #f5f5dc;
+
+}
+.iconos_paquete_admin
+{
+    /* border: #03540e solid 2px; */
+    display: flex;
+    align-items: center ;
+    align-self: baseline;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+    top:15px;
+
+  
+}
+
+.productos_admin article figure {
+    align-self: flex-start;
+    padding: 0 5px 0 5px;
+}
+.productos_admin article p {
+    align-self: flex-start;
+    margin: 0 0 4px 0;
+    padding: 0 6px 0 6px;
+}
+.item_producto_admin {
+    /*border: dotted 2px red;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+.item_producto_admin .seccion_campos_admin .campos_admin{
+    text-align: left;
+}
+/* Menu con los Iconos de Loguin - Registro - Carrito de compra */
+.nav_menu_admin {
+    /* border: dotted 2px rgb(115, 0, 255); */
+    margin: 0;
+    align-self: flex-end;    
+}
+.ul_2_admin {
+    /* border: dotted 2px rgb(255, 0, 0); */
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row; 
+    
+    
+  
+}
+.ul_2_admin li {
+    /*border: dotted 2px rgb(0, 255, 47);*/
+ 
+    list-style-type: none;
+    justify-content: flex-end;
+    flex-direction: row;
+    display: flex;
+    margin-left: -15px;
+    padding: 8px;
+
+
+}
+.ul_2_admin li img {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+
+}
+
+
+.crear_text_admin p, a
+{
+text-decoration: none;
+font-size: 10px;
+padding: 0;
+margin: 0px;
+
+}
+
+.menu_crear_admin{
+    /*border: dotted 2px red;*/
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-end;
+
+}
+.menu_crear_admin p {
+    font-size: larger;
+    
+}
+.crear_admin {
+    padding: 0 6px 0 6px;
+    width: 25px;
+    height: 25px;   
+}
+/* .crear_admin:hover {
+    width: 65px;
+    height: 65px;
+} */
+
+
+.nav_acciones_admin,  .nav_acciones_admin p, .nav_acciones_admin img
+{
+    font-size: 12px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    /* border: solid 1px red; */
+    margin-left: 10px;
+}
+.contenedor_admin_package h3
+{
+    font-size: 14px;
+    text-align: center;
+}
+/*======================================================================================================*/
+
+
+/* ============================================================================== */
+/* Formato para el formulario de alta de paquetes */
+.create_form {
+    padding: 20px 15px;
+    background-color: #ebebeb;
+    margin-bottom: 10px;
+    display: grid;
+
+}
+.control_formulario {
+    margin-bottom: 15px;
+    padding: 15px;
+   
+    /* max-width: 700px; */
+
+}
+.control_formulario_perfil {
+    margin-bottom: 15px;
+    padding: 15px;
+    font-style: italic;
+    font-weight: bolder;
+    /* max-width: 700px; */
+}
+.control_formulario label {
+    margin-bottom: 5px;
+    font-style: italic;
+    font-weight: bolder;
+    display: block;
+}
+.control {
+    width: 90%;
+    padding: 8px;
+}
+.boton_formulario {
+    background-color: #39b54a;
+    border: none;
+    font-size: 20px;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin: 10px;
+    border-radius: 5px;
+    
+}
+.boton_formulario:hover {
+    background-color: #03540e;
+}
+
+/* ================================================================================================================ */
+
+/* Media cueri para adaptar el diseño a los diferentes dispositivos */
+@media (min-width: 768px) {
+    /* Header */
+    .button-menu_hamburgue {
+        display: none;
+    }
+    .main-nav_hamburger {
+        display: none;
+    }
+    .nav-links_hamburguer {
+        display: none;
+    }
+    .link-item_hamburguer::after {
+        display: none;
+    }
+    .link-item_hamburguer {
+        display: none;
+    }
+    .button-menu_hamburgue_close {
+    
+        display: none;
+    }
+    .main-nav_hamburguer.show{
+        display: none;
+    }
+    .index_header {
+        justify-content: space-between;
+        
+    }
+    .nav_menu1 {
+        /*border: dotted 2px rgb(0, 255, 47); */
+        display: block;
+    }
+    .ul_1 {
+        /*border: dotted 2px red;*/
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        
+    }
+    .ul_1 li:hover {
+        background-color:rgb(195, 236, 158);      
+    }
+    .nav_menu1 li {
+        /*border: dotted 2px green;*/
+        list-style-type: none;
+        margin: 10px ;
+        padding: 8px;
+    }
+    /* Main */
+    .main {
+        /*border: dotted 2px red;*/
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        min-height: auto;     /*probando corregir error de espacio en el main index*/
+    }
+    .form_main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .main {
+        max-width: 778.4px;
+    }
+    .boton_main {
+        /*border: dotted 2px blue;*/
+        padding-left: 6px;
+        align-self: flex-start;
+    }
+
+    /* Footer */
+    
+    .header_footer .left_header_menu {
+        /*border: dotted 2px black;*/
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .header_footer .left_header_menu li {
+        margin: 5px 8px;
+        list-style-type: none;
+    }
+    .header_footer .left_header_menu li:hover {
+        background-color:rgb(195, 236, 158);      
+    }
+    
+    .index_footer .header_footer .hamburguer-button {
+        display: none;
+    }
+    .menu_footer {
+        display: block;
+    }
+    .index_footer .logo {
+        /*border: dotted 2px rgb(119, 0, 255);*/
+        max-width: 126px;
+        max-height: 50.4px;
+    
+    }
+}
+
+@media (min-width: 600px) {
+    /* Style for the Contacts page */
+    .imag_contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .imagen2 {
+        display: block;
+    }   
+}
+@media (min-width: 900px) {
+    /* Style for the Contacts page */
+    .imagen3 {
+        display: block;
+    }   
+}
+@media (min-width: 1200px) {
+    /* Style for the Contacts page */
+    .imagen4 {
+        display: block;
+    }   
+}
+@media (min-width: 1500px) {
+    /* Style for the Contacts page */
+    .imagen5 {
+        display: block;
+    }   
+}
+@media (min-width: 1800px) {
+    /* Style for the Contacts page */
+    .imagen6 {
+        display: block;
+    }   
+}
+@media (min-height: 768px) {
+    /* Style for the Contacts page */
+    .index_footer_contact {
+        /*border: dotted 2px black;*/
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 0px;
+        width: 100%;
+        height: 160px;
+        display: flex;
+        flex-direction: column;  
+    }
+    .iconos_sociales {
+        /*border: dotted 2px black;*/
+        margin-right: 15px;
+        display: flex;
+        flex-direction: row; 
+        align-self: flex-end;
+    }
+    .menu_footer {
+        /*border: dotted 2px black;*/
+        margin-right: 15px;   
+    }   
+}
+
+

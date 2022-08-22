@@ -1,0 +1,36 @@
+<%- include('./partials/head') %>
+
+  <body>
+  
+    <%- include('./partials/header_admin') %>
+
+    <!-- Page content -->
+    <div class="contenedor_admin_package">
+
+      <nav class="nav_acciones_admin">
+
+        <a class="crear_text_admin" href="/admin/crear"><img  class= "crear_admin" src="/images/circle-plus-solid.svg" alt="Crear" >
+          <p>Crear</p></a>
+        <a class="crear_text_admin" href="/admin"><img class= "crear_admin" src="/images/atras.svg" alt="Crear" >
+          <p>Home</p></a>
+      </nav>
+
+      <h3>Listado de paquetes</h3>
+    
+
+
+      <section class="paquetes">
+
+        <div class="productos_admin">
+                <% for (let paquete of package_table) {%>
+                  <%- include('./partials/paquete_admin', {paquete}) %>      
+                <% } %>  
+        </div>
+   
+      </section>
+  
+      <!-- Footer -->
+      <%- include('./partials/footer_admin') %>
+    </div>
+  </body>
+</html>

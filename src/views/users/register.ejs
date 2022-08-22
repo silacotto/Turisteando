@@ -1,0 +1,90 @@
+    <%- include('../partials/head') %>
+
+    <body>
+
+        <%- include('../partials/header') %>
+        
+        <main class="background">
+            <section class="container_register">
+                <div class="register_form">
+                    <form action="/users/register" method="POST" enctype="multipart/form-data" class="reg_form">
+                        <h3>Registrate</h3>
+                        <div>
+                            <!-- Errores validaciones front -->
+                            <div class="text-danger">
+                                <ul></ul>
+                            </div>
+                            <div class="input_register">
+                                
+                                <!-- Usuario -->
+                                <input type="text" name="user" 
+                                class="input_box user_name <%= locals.errors && errors.name ? 'is-invalid' : null %>" 
+                                placeholder="Usuario"  maxlength="40"  
+                                value="<%= locals.oldData ? oldData.user : null %>"
+                                >
+                                <% if (locals.errors && errors.user) { %>
+                                    <div class="text-danger">
+                                        <%= errors.user.msg %>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input_register">
+                                <!-- Email -->
+                                <input type="email" name="email" 
+                                class="input_box user_email" placeholder="Email"  maxlength="40" 
+                                value="<%= locals.oldData ? oldData.email : null %>">
+                                <% if (locals.errors && errors.email) { %>
+                                    <div class="text-danger">
+                                        <%= errors.email.msg %>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input_register">
+                                <!-- Contraseña -->
+                                <input type="password" name="password" class="input_box user_psw" placeholder="Contraseña"  maxlength="40">
+                                <% if (locals.errors && errors.password) { %>
+                                    <div class="text-danger">
+                                        <%= errors.password.msg %>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input_register">
+                                <!-- Confirmar contraseña -->
+                                <input type="password" name="password_valid" class="input_box user_repsw" placeholder="Confirmar contraseña"  maxlength="40">
+                                <% if (locals.errors && errors.password_valid) { %>
+                                    <div class="text-danger">
+                                        <%= errors.password_valid.msg %>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="avatar_form">
+                                <label for="file_upload" class="user_imagen"><p>Imagen de perfil</p></label>
+                                <input class="avatar_input" type="file" name="avatar">
+                                <% if (locals.errors && errors.avatar) { %>
+                                    <div class="text-danger">
+                                        <%= errors.avatar.msg %>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div class="form_button_register">
+                            <button type="submit" class="button_signup">
+                                <span>Registrate</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>    
+        </main>
+
+        <%- include('../partials/footer') %>
+    </body>
+</html>

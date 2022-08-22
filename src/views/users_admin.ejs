@@ -1,0 +1,36 @@
+<%- include('./partials/head') %>
+
+  <body>
+  
+    <%- include('./partials/header_admin') %>
+        <h1 class="main_title">Listado de Usuarios Registrados</h1>
+
+          <div class="menu_crear_admin">
+  
+         
+
+          <nav class="nav_acciones_admin">
+             
+            <a class="crear_text_admin" href="/admin"><img class= "crear_admin" src="/images/atras.svg" alt="Crear" >
+              <p>Home</p></a>
+          </nav>
+        </div>
+        
+        <div class="main_users">
+          <br>
+            <%for (let user of users_table) {%>
+                <div  class="users_list">
+                  <a  id="<%= user.user_id %>" href="/admin/userDetail/<%= user.user_id %>">
+                    <legend><%= user.user %></legend>
+                    <img  class="user_avatar" src="/images/users/avatars/<%= user.avatar ? user.avatar : "user_avatar_default.png" %>">
+                  </a>
+                  <hr>
+                </div>  
+              <% } %>
+        </div>
+   
+
+        <!-- Footer -->
+        <%- include('./partials/footer_admin') %>
+</body>
+</html>

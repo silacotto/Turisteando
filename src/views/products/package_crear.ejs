@@ -1,0 +1,160 @@
+
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header_admin') %>
+
+    <!-- Formulario -->
+    
+    <form action="/admin/crear" method="POST" class="producto_v create_form" enctype="multipart/form-data" id="form_crear">
+        <h3>Crear paquete turístico</h3> 
+        <div class="errores">
+            <ul class="errores_formulario_v"></ul>
+        </div>    
+        <div class="control_formulario">
+            <label>Nombre paquete: </label>
+            <input type="text" name="package_name" class="name_v control <%= locals.errors && errors.package_name ? 'is_invalid' : null %>"
+                value="<%= locals.old_data ? old_data.package_name : null %>"
+                placeholder="nombre del paquete" maxlength="32" size="32">
+                <% if (locals.errors && errors.package_name) { %>
+                    <div class="text_error">
+                        <%= errors.package_name.msg %> 
+                    </div> 
+                <% } %>
+            </div>
+        <div class="control_formulario">
+            <label class="imagen_v">Imagen: </label>
+            <input type="file" name="turisteando_image" id="turisteando_image" accept= ".jpeg, .png, .webp" 
+                    class="image_v control" value="<%= locals.old_data ? old_data.turisteando_image : null %>">
+                <% if (locals.errors && errors.turisteando_image) { %>
+                    <div class="text_error">
+                        <%= errors.turisteando_image.msg %> 
+                    </div> 
+                <% } %>
+                
+        </div>
+        <div class="control_formulario">
+            <label>Describir imagen: </label>
+            <input type="text" name="package_alt_image" class="alt_image_v control <%= locals.errors && errors.package_alt_image ? 'is_invalid' : null %>"
+                    value="<%= locals.old_data ? old_data.package_alt_image : null %>" 
+                    placeholder="descrpción alternativa de la imagen" size="32">
+                <% if (locals.errors && errors.package_alt_image) { %>
+                    <div class="text_error">
+                        <%= errors.package_alt_image.msg %> 
+                    </div> 
+                <% } %>
+        </div>
+        <div class="control_formulario">
+            <label>Precio paquete: </label>
+            <input type="number" name="package_price" class="price_v control <%= locals.errors && errors.package_price ? 'is_invalid' : null %>"
+                    value="<%= locals.old_data ? old_data.package_price : null %>" 
+                    placeholder="precio" maxlength="10" size="10">
+                <% if (locals.errors && errors.package_price) { %>
+                    <div class="text_error">
+                        <%= errors.package_price.msg %> 
+                    </div> 
+                <% } %>
+        </div>
+        <div class="control_formulario">
+            <label>Título paquete: </label>
+            <input type="text" name="package_title" class="title_v control <%= locals.errors && errors.package_title ? 'is_invalid' : null %>"
+                    value="<%= locals.old_data ? old_data.package_title : null %>" 
+                    placeholder="descrpción alternativa de la imagen" size="32">
+                <% if (locals.errors && errors.package_title) { %>
+                    <div class="text_error">
+                        <%= errors.package_title.msg %> 
+                    </div> 
+                <% } %>
+        </div>
+        <div class="control_formulario">
+            <label>Cantidad de días: </label>
+            <input type="number" name="package_q_days" class="q_days_v control <%= locals.errors && errors.package_q_days ? 'is_invalid' : null %>" 
+                    value="<%= locals.old_data ? old_data.package_q_days : null %>" 
+                    placeholder="cantidad de días" minlength="1" size="17">
+                <% if (locals.errors && errors.package_q_days) { %>
+                    <div class="text_error">
+                        <%= errors.package_q_days.msg %> 
+                    </div> 
+                <% } %>
+        </div>
+        <div class="control_formulario">
+            <label for='hoteles'>Hotel: </label>
+            <select name="package_hotel" id="hoteles">
+                <% for (let hotel of lista_hoteles) {%>
+                    <option value="<%= hotel.id %>"
+                            <%= locals.old_data && old_data.package_hotel == hotel.id ? 'selected' : null %>><%= hotel.nombre %></option>
+                <% } %>
+            </select>
+        </div>
+        
+        <div class="control_formulario">
+            <label>Descripción: </label>
+            <textarea name="package_description" class="description_v control <%= locals.errors && errors.package_description ? 'is_invalid' : null %>"
+                    ><%= locals.old_data ? old_data.package_description : null %></textarea>
+                <% if (locals.errors && errors.package_description) { %>
+                    <div class="text_error">
+                        <%= errors.package_description.msg %> 
+                    </div> 
+                <% } %>
+        </div>
+        <div class="control_formulario">
+            <label>Día de admisión: </label>
+            <input type="date" name="package_date_admission" 
+                    class="date_admission_v control <%= locals.errors && errors.package_date_admission ? 'is_invalid' : null %>"
+                    value="<%= locals.old_data ? old_data.package_date_admission : null %>" >
+                <% if (locals.errors && errors.package_date_admission) { %>
+                    <div class="text_error">
+                        <%= errors.package_date_admission.msg %> 
+                    </div> 
+                <% } %>
+        </div>
+        <div class="control_formulario_perfil">
+            <label for="package_index">package_index: </label>
+            <label>SI <input type="radio" name="package_index" value= "1" 
+                        <%= locals.old_data && old_data.package_index == "1" ? 'checked' : null %>></label>
+            <label>NO <input type="radio" name="package_index" value= "2" 
+                <%= locals.old_data && old_data.package_index == "2" ? 'checked' : locals.old_data ? null : 'checked' %>></label>
+        </div>
+        <div class="control_formulario_perfil">
+            <label for="package_category">Categoría: </label>
+            <label>paquete regular <input type="radio" name="package_category" value="1"
+                <%= locals.old_data && old_data.package_category === "1" ? 'checked' : locals.old_data ? null : 'checked' %> ></label>
+            <label>paquete en oferta <input type="radio" name="package_category" value="2"
+                <%= locals.old_data && old_data.package_category === "2" ? 'checked' : null %>></label>
+        </div>
+        <div class="control_formulario_perfil">
+            <label for="package_transportation">Medio de transporte: </label>
+            <label>aéreo <input type="radio" name="package_transportation" value="1" 
+                <%= locals.old_data && old_data.package_transportation === "1" ? 'checked' : locals.old_data ? null : 'checked' %> ></label>
+            <label>omnibus <input type="radio" name="package_transportation" value="2" 
+                <%= locals.old_data && old_data.package_transportation === "2" ? 'checked' : null %>></label>
+            <label>sin transporte incluido <input type="radio" name="package_transportation" value="3" 
+                <%= locals.old_data && old_data.package_transportation === "3" ? 'checked' : null %>></label>
+        </div>
+        <div class="control_formulario">
+            <label for='excurciones'>Excursiones: </label>
+            <select name="package_excursions_id" id="excursiones">
+                <% for (let excursion of lista_excursiones) {%>
+                    <option value="<%= excursion.id %>"
+                        <%= locals.old_data && old_data.package_excursions_id == excursion.id ? 'selected' : null %>><%= excursion.name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="control_formulario">
+            <label>Descuento: </label>
+            <input type="number" name="package_discount" 
+                    class="discount_v control <%= locals.errors && errors.package_discount ? 'is_invalid' : null %>"
+                    value="<%= locals.old_data ? old_data.package_discount : null %>" 
+                    placeholder="descuento" maxlength="10" size="10">
+                <% if (locals.errors && errors.package_discount) { %>
+                    <div class="text_error">
+                        <%= errors.package_discount.msg %> 
+                    </div> 
+                <% } %>
+        </div>                                                                       
+        <button type= "submit" class="boton_formulario">Aceptar</button>
+        <button type="reset" class="boton_formulario">Borrar</button>
+        <button type="reset" class="boton_formulario"><a href="/admin/productos">Cancelar</a></button>
+    </form>
+    <%- include('../partials/footer_admin') %>
+</body>
+</html>

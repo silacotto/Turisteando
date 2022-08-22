@@ -1,0 +1,25 @@
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+
+  <main>
+    <div class="container_user" style="text-align: center;">
+      <h2>¡Hola <%= user.user %>! </h2>
+      <img src="/images/users/avatars/<%= user.avatar %>">
+      <br>
+      <br>
+      <div><%= user.email %></div>
+      <!-- <nav class= "iconos">
+        <ul class="ul_2_admin">
+            <li><a href="/users/profile/<%= user.user_id %>"><img src="/images/pencil-solid.svg" ></a></li>
+            <li><a href="/users/profile/<%= user.user_id %>/delete"><img src="/images/trash-can-solid.svg" ></a></li>
+       </ul>
+      </nav> -->
+    </div>
+  </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

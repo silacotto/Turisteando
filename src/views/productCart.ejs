@@ -1,0 +1,87 @@
+<%- include('./partials/head') %>
+
+<body>
+
+    <%- include('./partials/header') %>
+    
+        <main class="class_main_cart" >
+           
+            <section>
+                <h2 class="encabezado_cart">Carrito de compras</h2>
+                <hr id="hr">
+            
+                    <% for (let paquete of data_show_cart) {%>
+                    
+                    <article class="max_cart"<%= paquete.package_id %>> 
+                        <hr class="hr">
+                        <h5 class="subtitulo_cart"><%= paquete.package.package_name %></h5>
+                        <hr class="hr">
+                        <div class="grupo_superior_cart">
+                            <div class="superior_A">
+                                <div>
+                                   <img class="imagen_item_cart" src="/images/<%= paquete.package.package_image %>" alt="<%= paquete.package.package_alt_image %>">
+                                </div> 
+                                <div>
+                                    <p class="discount_cart" > <%= paquete.package_discount %> % </p> 
+                                </div>
+                            </div>
+                            <div class="superior_B">
+                                <div>
+                                    <p class="title_item_cart"> <%= paquete.package.package_title %> </p>
+                                </div>
+                                <div class="contenedor_contador">
+                                    <!-- <form action="/cart/add/<%= paquete.package_id%>"> -->
+                                    <label class="cantidad_item" for="cantidad">Pasajeros: <%= paquete.passengers%></label>
+                                    <!-- <input type="number" id="<%= paquete.package_id%>" value="<%= paquete.passengers%>" readonly name="cantidad" placeholder="1" class="contador" min="1" step="1">
+                                    </form> -->
+                                </div> 
+                                <div>
+                                    <p class="price_item_cart">$<%= paquete.package_price %></p>
+                                </div>
+                          
+                                  <div>
+                                    <p class="price_descount_item">$<%=paquete.sub_total%></p>
+                                    <p class="price_person_item">(por persona)</p>
+                                </div>
+                         
+                            </div>
+                            <div class="superior_C">
+                                <div>
+                                    <p class="total_item_cart">Subtotal:</p>
+                                    <p class="total_item_cart">$<%= paquete.total %></p>
+                                </div>
+                              
+                                <div class="delete_item">
+                                    <form action="/cart/delete/<%= paquete.package_id %>?_method=DELETE" method="post" >
+                                        <button  class="remove" type="submit" name="button_reset" ><i class="fa-solid fa-trash-can"></i></button></a>
+                                    </form>  
+                                </div>
+                            </div>
+                        </div>
+                        <% } %> 
+                   </article>
+                    <hr class="hr">
+            </section>   
+            <section>
+                    <article>  
+                        <div class="grupo_inferior_cart">
+                            <h4 class="">Total:</h4>
+                                <% if (total){ %> 
+                            <h4>$<%=total%></h4>
+                                <% } %> 
+                                <div class="inferior_A">
+                                    <form action="/cart/purchase" method="get">
+                                        <button class="botonPago" type="submit" value="iniciar_compra" name="start_buy" id="start_buy">Iniciar compra</button></a>
+                                    </form>
+                                    <label class="keep_buy"><a href="./index">Seguir comprando<i class="fa-solid fa-cart-shopping"></i></a></label>
+                                </div>
+                        </div>
+                    </article> 
+            </section>
+            
+        </main>
+        
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<%- include('./partials/head') %>
+
+<body>
+
+    <%- include('./partials/header') %>
+   
+    <%- include('./partials/main', {selector_paquetes}) %>
+    
+        <main class=cart_main >
+            <section class="section_cart_empty" >
+ 
+                <h2 class="empty_cart" >No hay productos para mostrar </h2>
+            
+                <div class="find_package">
+                <a  href="./index"  ><img class= "volver_admin"  src="/images/arrow-left-solid.svg" alt="Volver al Home"  ></a>
+                </div>
+                   
+           
+            </section>
+            
+        </main>
+        
+    <%- include('./partials/footer') %>
+
+</body>
+</html>
