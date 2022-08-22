@@ -877,11 +877,11 @@ h1
 
 /*-----CartForm----*/
 
-.this_is_invalid
+/* .this_is_invalid
 {
     background-color: rgba(235, 182, 148, 0.477);
     border-color: #800000;
-}
+} */
 .cartMain
 {
     display: flex;
